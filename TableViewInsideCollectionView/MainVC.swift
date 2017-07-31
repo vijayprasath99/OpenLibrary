@@ -10,7 +10,6 @@ import UIKit
 
 class MainVC: UIViewController{
     
-    let arrayOfAPI = ["Test1","Test2","Test3"]
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,7 +29,7 @@ extension MainVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfAPI.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

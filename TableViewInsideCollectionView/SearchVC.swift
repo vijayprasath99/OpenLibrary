@@ -24,7 +24,10 @@ class SearchVC: UIViewController, UISearchBarDelegate {
     
     func networkTest(){
         let jsonURL = "https://openlibrary.org/search.json?q=pokemon&has_fulltext=true"
-        Network.sharedInstance.downloadJSON(from: jsonURL)
+        Network.sharedInstance.downloadJSON2(from: jsonURL, completion: { (json) in
+            _ = Parser.sharedInstance.parseIntoWorksArray(data: json)
+        })
+        
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
