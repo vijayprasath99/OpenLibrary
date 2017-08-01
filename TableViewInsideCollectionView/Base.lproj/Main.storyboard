@@ -85,7 +85,7 @@
                                 <rect key="frame" x="0.0" y="64" width="768" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1yx-fr-GV6">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1yx-fr-GV6">
                                 <rect key="frame" x="0.0" y="108" width="768" height="916"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -96,10 +96,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-g7-Dlx">
-                                                    <rect key="frame" x="8" y="4" width="100" height="110"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-g7-Dlx">
+                                                    <rect key="frame" x="8" y="5" width="100" height="110"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="110" id="6p9-YI-oZo"/>
                                                         <constraint firstAttribute="width" constant="100" id="ORs-fK-X3n"/>
                                                     </constraints>
                                                 </imageView>
@@ -164,8 +163,13 @@
                                                 <constraint firstItem="MWU-IK-o9E" firstAttribute="top" secondItem="eaf-Ut-mWg" secondAttribute="topMargin" constant="8" id="LBx-t8-qvQ"/>
                                                 <constraint firstItem="Cxf-g7-Dlx" firstAttribute="centerY" secondItem="eaf-Ut-mWg" secondAttribute="centerY" id="d8t-eT-ofX"/>
                                                 <constraint firstItem="Cxf-g7-Dlx" firstAttribute="leading" secondItem="eaf-Ut-mWg" secondAttribute="leading" constant="8" id="iav-X4-NzS"/>
+                                                <constraint firstAttribute="bottom" secondItem="Cxf-g7-Dlx" secondAttribute="bottom" constant="5" id="mDZ-we-rF9"/>
+                                                <constraint firstItem="Cxf-g7-Dlx" firstAttribute="top" secondItem="eaf-Ut-mWg" secondAttribute="top" constant="5" id="noX-ls-5fE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="authorNameLabel" destination="bdU-AR-41W" id="g6M-dL-vYg"/>
                                             <outlet property="bookImageView" destination="Cxf-g7-Dlx" id="Qrd-Lk-dbs"/>

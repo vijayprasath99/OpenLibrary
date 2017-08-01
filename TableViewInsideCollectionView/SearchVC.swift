@@ -25,7 +25,6 @@ class SearchVC: UIViewController {
         searchBar.returnKeyType = UIReturnKeyType.search
         
         //Activity Indicator
-//        activityIndicator.backgroundColor = UIColor.black
         self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         self.indicateLoading(false)
         
@@ -70,6 +69,7 @@ class SearchVC: UIViewController {
     }
 }
 
+//Table View Functions
 extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -101,6 +101,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//Search Bar Functions
 extension SearchVC : UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
@@ -108,6 +109,7 @@ extension SearchVC : UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
+        indicateLoading(false)
         searchBar.showsCancelButton = false
     }
     

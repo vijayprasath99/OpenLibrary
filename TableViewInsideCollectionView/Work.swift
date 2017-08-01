@@ -55,21 +55,21 @@ class Work {
     
     var coverIdSmall : String{
         if let temp = _coverID {
-            return "olid/\(temp)-S.jpg"
+            return "olid/\(temp)-S"
         }
         return "olid/error"
     }
     
     var coverIdMedium : String{
         if let temp = _coverID {
-            return "olid/\(temp)-M.jpg"
+            return "olid/\(temp)-M"
         }
         return "olid/error"
     }
     
     var coverIdLarge : String{
         if let temp = _coverID {
-            return "olid/\(temp)-L.jpg"
+            return "olid/\(temp)-L"
         }
         return "olid/error"
     }

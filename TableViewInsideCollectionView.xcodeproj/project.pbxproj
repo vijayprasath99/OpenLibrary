@@ -19,6 +19,7 @@
 		65875C091F2FDE4400D97CEC /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875C081F2FDE4400D97CEC /* Parser.swift */; };
 		65875C0B1F30C40400D97CEC /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875C0A1F30C40400D97CEC /* Strings.swift */; };
 		65875C0F1F30C49D00D97CEC /* BookTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875C0E1F30C49D00D97CEC /* BookTVCell.swift */; };
+		658B52681F30EF40008B52F9 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B52671F30EF40008B52F9 /* MaterialView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		65875C081F2FDE4400D97CEC /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		65875C0A1F30C40400D97CEC /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		65875C0E1F30C49D00D97CEC /* BookTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTVCell.swift; sourceTree = "<group>"; };
+		658B52671F30EF40008B52F9 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		65326F341F2E630300684ECB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				658B52671F30EF40008B52F9 /* MaterialView.swift */,
 				65875C0E1F30C49D00D97CEC /* BookTVCell.swift */,
 			);
 			name = View;
@@ -212,6 +215,7 @@
 				65875C021F2FBF2200D97CEC /* Network.swift in Sources */,
 				65875C041F2FBF6F00D97CEC /* Work.swift in Sources */,
 				65326F221F2E62E900684ECB /* AppDelegate.swift in Sources */,
+				658B52681F30EF40008B52F9 /* MaterialView.swift in Sources */,
 				65875C0F1F30C49D00D97CEC /* BookTVCell.swift in Sources */,
 				65875C091F2FDE4400D97CEC /* Parser.swift in Sources */,
 			);
