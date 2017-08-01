@@ -17,6 +17,8 @@
 		65875C041F2FBF6F00D97CEC /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875C031F2FBF6F00D97CEC /* Work.swift */; };
 		65875C071F2FCDB600D97CEC /* Declarations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875C061F2FCDB600D97CEC /* Declarations.swift */; };
 		65875C091F2FDE4400D97CEC /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875C081F2FDE4400D97CEC /* Parser.swift */; };
+		65875C0B1F30C40400D97CEC /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875C0A1F30C40400D97CEC /* Strings.swift */; };
+		65875C0F1F30C49D00D97CEC /* BookTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65875C0E1F30C49D00D97CEC /* BookTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		65875C031F2FBF6F00D97CEC /* Work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
 		65875C061F2FCDB600D97CEC /* Declarations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Declarations.swift; sourceTree = "<group>"; };
 		65875C081F2FDE4400D97CEC /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		65875C0A1F30C40400D97CEC /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		65875C0E1F30C49D00D97CEC /* BookTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		65326F341F2E630300684ECB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				65875C0E1F30C49D00D97CEC /* BookTVCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				65875C061F2FCDB600D97CEC /* Declarations.swift */,
+				65875C0A1F30C40400D97CEC /* Strings.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -201,10 +207,12 @@
 			files = (
 				65875C071F2FCDB600D97CEC /* Declarations.swift in Sources */,
 				65875BFF1F2FB84F00D97CEC /* SearchVC.swift in Sources */,
+				65875C0B1F30C40400D97CEC /* Strings.swift in Sources */,
 				65326F241F2E62E900684ECB /* MainVC.swift in Sources */,
 				65875C021F2FBF2200D97CEC /* Network.swift in Sources */,
 				65875C041F2FBF6F00D97CEC /* Work.swift in Sources */,
 				65326F221F2E62E900684ECB /* AppDelegate.swift in Sources */,
+				65875C0F1F30C49D00D97CEC /* BookTVCell.swift in Sources */,
 				65875C091F2FDE4400D97CEC /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

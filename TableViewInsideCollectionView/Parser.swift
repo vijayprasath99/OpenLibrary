@@ -11,13 +11,12 @@ import Foundation
 class Parser {
     static let sharedInstance = Parser()
     
-    func parseIntoWorksArray(data : Any) -> [Work] {
+    func worksArray(fromJsonData data : Any) -> [Work] {
         var works = [Work]()
         let json = data as? [String : Any]
         if let docs = json?["docs"] as? [[String : Any]]{
             for doc in docs {
                 let workCreated = Work(jsonArray: doc)
-                workCreated.printWork()
                 works.append(workCreated)
             }
         }

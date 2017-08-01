@@ -41,7 +41,7 @@ class Network{
     func downloadJSON2(from : String, completion : @escaping DownloadComplete){
         
         guard let jsonURL = URL(string: from) else {
-            print("Something wrong with parsing URL")
+            print("Something wrong with parsing URL -> \(from)")
             return
         }
         let config = URLSessionConfiguration.default
@@ -53,8 +53,8 @@ class Network{
                 do{
                     let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
                     completion(json)
-                } catch {
-                    
+                } catch let jsonErr {
+                    print(jsonErr.localizedDescription)
                 }
             }
         }

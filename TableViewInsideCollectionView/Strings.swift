@@ -1,12 +1,11 @@
 //
-//  Declarations.swift
+//  Strings.swift
 //  TableViewInsideCollectionView
 //
-//  Created by Pattur Mohankumar, Vijay Prasath on 7/31/17.
+//  Created by Pattur Mohankumar, Vijay Prasath on 8/1/17.
 //  Copyright © 2017 Pattur Mohankumar, Vijay Prasath. All rights reserved.
 //
 
 import Foundation
 
-typealias DownloadComplete = (Any) -> ()
-
+let SEARCHVC_REUSE_IDENTIFIER : String = "BookViewCell"

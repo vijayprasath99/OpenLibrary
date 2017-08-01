@@ -81,6 +81,13 @@ class Work {
         return 0
     }
     
+    var numberOfEditions : Int {
+        if let temp = _numberOfEditions {
+            return temp
+        }
+        return 0
+    }
+    
     init(jsonArray doc: [String : Any]){
         self._title = doc["title_suggest"] as? String
         self._subtitle = doc["subtitle"] as? String
@@ -88,6 +95,8 @@ class Work {
         self._hasFullText = doc["has_fulltext"] as? Bool
         self._firstPublishedYear = doc["first_publish_year"] as? Int
         self._coverID = doc["printdisabled_s"] as? String // Need further Expansion
+        self._numberOfEbooks = doc["ebook_count_i"] as? Int
+        self._numberOfEditions = doc["edition_count"] as? Int
     }
 }
 

@@ -6,21 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Open Book!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <searchDisplayController id="YJz-Hd-XvT">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="ioS-JH-m6i"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="4yC-Va-lJx"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="4S6-fJ-wtd"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="c0J-o5-MR2"/>
-                    </connections>
-                </searchDisplayController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MainVC" customModule="TableViewInsideCollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -65,6 +57,15 @@
                         <outlet property="tableView" destination="rel-Pp-hpb" id="S50-RM-Fuy"/>
                     </connections>
                 </viewController>
+                <searchDisplayController id="YJz-Hd-XvT">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="ioS-JH-m6i"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="4yC-Va-lJx"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="4S6-fJ-wtd"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="c0J-o5-MR2"/>
+                    </connections>
+                </searchDisplayController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="843" y="122"/>
         </scene>
@@ -88,30 +89,118 @@
                                 <rect key="frame" x="0.0" y="108" width="768" height="916"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookViewCell" rowHeight="120" id="4Pu-s7-Wzh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookViewCell" rowHeight="120" id="4Pu-s7-Wzh" customClass="BookTVCell" customModule="TableViewInsideCollectionView" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="768" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Pu-s7-Wzh" id="eaf-Ut-mWg">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-g7-Dlx">
+                                                    <rect key="frame" x="8" y="4" width="100" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="110" id="6p9-YI-oZo"/>
+                                                        <constraint firstAttribute="width" constant="100" id="ORs-fK-X3n"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MWU-IK-o9E">
+                                                    <rect key="frame" x="120" y="16" width="628" height="87.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-h3-ZoO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="628" height="47"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="my1-M8-IAI">
+                                                                    <rect key="frame" x="0.0" y="10.5" width="576" height="26"/>
+                                                                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="26"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdU-AR-41W">
+                                                                    <rect key="frame" x="576" y="15" width="52" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="my1-M8-IAI" firstAttribute="leading" secondItem="wcZ-h3-ZoO" secondAttribute="leading" id="CfT-jU-0BY"/>
+                                                                <constraint firstAttribute="trailing" secondItem="bdU-AR-41W" secondAttribute="trailing" id="Wgt-x1-INu"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbv-uP-yxN">
+                                                            <rect key="frame" x="0.0" y="47" width="628" height="40.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Editions &amp; ebook count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOs-Dr-YQZ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="523.5" height="40.5"/>
+                                                                    <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
+                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="first published" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w61-WF-4OB">
+                                                                    <rect key="frame" x="523.5" y="0.0" width="104.5" height="40.5"/>
+                                                                    <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
+                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="w61-WF-4OB" secondAttribute="trailing" id="Kzs-o0-vL2"/>
+                                                                <constraint firstItem="cOs-Dr-YQZ" firstAttribute="leading" secondItem="Qbv-uP-yxN" secondAttribute="leading" id="pnh-6O-G9h"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Qbv-uP-yxN" secondAttribute="trailing" id="1UV-Rb-Ueo"/>
+                                                        <constraint firstItem="Qbv-uP-yxN" firstAttribute="leading" secondItem="MWU-IK-o9E" secondAttribute="leading" id="NTv-ez-BGd"/>
+                                                        <constraint firstItem="wcZ-h3-ZoO" firstAttribute="leading" secondItem="MWU-IK-o9E" secondAttribute="leading" id="QFs-aN-iR2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wcZ-h3-ZoO" secondAttribute="trailing" id="W6Q-Bg-I3M"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MWU-IK-o9E" firstAttribute="leading" secondItem="Cxf-g7-Dlx" secondAttribute="trailing" constant="12" id="5Nw-q6-tKb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MWU-IK-o9E" secondAttribute="trailing" constant="12" id="Bzb-Cu-W5B"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MWU-IK-o9E" secondAttribute="bottom" constant="8" id="HUy-G0-YYf"/>
+                                                <constraint firstItem="MWU-IK-o9E" firstAttribute="top" secondItem="eaf-Ut-mWg" secondAttribute="topMargin" constant="8" id="LBx-t8-qvQ"/>
+                                                <constraint firstItem="Cxf-g7-Dlx" firstAttribute="centerY" secondItem="eaf-Ut-mWg" secondAttribute="centerY" id="d8t-eT-ofX"/>
+                                                <constraint firstItem="Cxf-g7-Dlx" firstAttribute="leading" secondItem="eaf-Ut-mWg" secondAttribute="leading" constant="8" id="iav-X4-NzS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorNameLabel" destination="bdU-AR-41W" id="g6M-dL-vYg"/>
+                                            <outlet property="bookImageView" destination="Cxf-g7-Dlx" id="Qrd-Lk-dbs"/>
+                                            <outlet property="bookTitleLabel" destination="my1-M8-IAI" id="05X-BT-el0"/>
+                                            <outlet property="editionEbookLabel" destination="cOs-Dr-YQZ" id="gk0-iI-g8v"/>
+                                            <outlet property="firstPublishedLabel" destination="w61-WF-4OB" id="I5l-Ob-Hu3"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eVY-Dj-IMh">
+                                <rect key="frame" x="334" y="462" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="J6I-eb-7KG"/>
+                                    <constraint firstAttribute="height" constant="100" id="bI3-SW-Qcp"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1yx-fr-GV6" firstAttribute="leading" secondItem="5PU-kR-23f" secondAttribute="leading" id="AwT-sN-rPN"/>
+                            <constraint firstItem="eVY-Dj-IMh" firstAttribute="centerY" secondItem="5PU-kR-23f" secondAttribute="centerY" id="DIJ-W0-QrY"/>
                             <constraint firstItem="1yx-fr-GV6" firstAttribute="top" secondItem="Gck-iV-fYR" secondAttribute="bottom" id="KDb-U6-ojk"/>
                             <constraint firstItem="Gck-iV-fYR" firstAttribute="leading" secondItem="5PU-kR-23f" secondAttribute="leading" id="Klb-Xy-giz"/>
                             <constraint firstItem="In7-bz-CZm" firstAttribute="top" secondItem="1yx-fr-GV6" secondAttribute="bottom" id="QcU-yU-cAH"/>
                             <constraint firstItem="Gck-iV-fYR" firstAttribute="top" secondItem="aBe-F3-Jxm" secondAttribute="bottom" id="Tur-Um-ku4"/>
                             <constraint firstAttribute="trailing" secondItem="1yx-fr-GV6" secondAttribute="trailing" id="e9c-W8-MVc"/>
+                            <constraint firstItem="eVY-Dj-IMh" firstAttribute="centerX" secondItem="5PU-kR-23f" secondAttribute="centerX" id="efL-xt-DXx"/>
                             <constraint firstAttribute="trailing" secondItem="Gck-iV-fYR" secondAttribute="trailing" id="g1B-XJ-INj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="eVY-Dj-IMh" id="hKY-vb-3iS"/>
                         <outlet property="searchBar" destination="Gck-iV-fYR" id="0pc-66-pz6"/>
+                        <outlet property="tableView" destination="1yx-fr-GV6" id="ODK-kO-SOq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="485-RZ-0Hg" userLabel="First Responder" sceneMemberID="firstResponder"/>
