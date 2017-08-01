@@ -24,6 +24,9 @@ class SearchVC: UIViewController {
         searchBar.becomeFirstResponder()
         searchBar.returnKeyType = UIReturnKeyType.search
         
+        //Navigation Item
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: nil)
+        
         //Activity Indicator
         self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         self.indicateLoading(false)
@@ -33,16 +36,21 @@ class SearchVC: UIViewController {
         tableView.dataSource = self
     }
     
+    //Perform a search with API and reload table data
     fileprivate func performSearch(with searchKey: String){
         let formattedSearchKey : String = stringTransformedForSearch(from: searchKey)
         let jsonURL = "https://openlibrary.org/search.json?q=\(formattedSearchKey)&has_fulltext=true"
         Network.sharedInstance.downloadJSON2(from: jsonURL, completion: { (json) in
             self.worksArray = Parser.sharedInstance.worksArray(fromJsonData: json)
-            self.indicateLoading(false)
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.indicateLoading(false)
+                self.tableView.reloadData()
+
+            }
         });
     }
     
+    //Transform a Searchkey with spaces into proper format
     fileprivate func stringTransformedForSearch(from oldString: String) -> String {
         let newStringArray = oldString.components(separatedBy: " ")
         if newStringArray.count == 0 {
@@ -58,14 +66,17 @@ class SearchVC: UIViewController {
         }
     }
     
+    //Indicate to the user data is being loaded/processed
     fileprivate func indicateLoading(_ toggle : Bool){
         if toggle {
+            tableView.alpha = 0.5
             activityIndicator.startAnimating()
-            activityIndicator.isHidden = false
         } else {
+            tableView.alpha = 1
             activityIndicator.stopAnimating()
-            activityIndicator.isHidden = true
         }
+        activityIndicator.isHidden = !toggle
+        tableView.isUserInteractionEnabled = !toggle
     }
 }
 
@@ -99,26 +110,48 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let work = worksArray?[indexPath.row]{
+            print(work.title, work.subtitle)
+        }
+    }
 }
 
 //Search Bar Functions
 extension SearchVC : UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = true
+        _searchBar(beingUsed: true)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        view.endEditing(true)
-        indicateLoading(false)
-        searchBar.showsCancelButton = false
+        _searchBar(beingUsed: false)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines), text != "" {
-            performSearch(with: text)
-            view.endEditing(true)
+            _searchBar(beingUsed: false)
             indicateLoading(true)
+            performSearch(with: text)
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        tableView.endUpdates()
+        indicateLoading(false)
+    }
+    
+    func _searchBar(beingUsed toggle : Bool){
+        if toggle {
+            searchBar.showsCancelButton = true
+            tableView.alpha = 0.5
+        } else {
+            view.endEditing(true)
+            indicateLoading(false)
+            searchBar.showsCancelButton = false
+            tableView.alpha = 1
+        }
+        tableView.isUserInteractionEnabled = !toggle
     }
 
 }
