@@ -205,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="1686.71875" y="121.87499999999999"/>
         </scene>
-        <!--View Controller-->
+        <!--Work DetailsVC-->
         <scene sceneID="bne-6k-yIa">
             <objects>
-                <viewController id="yV0-uw-yM3" sceneMemberID="viewController">
+                <viewController id="yV0-uw-yM3" customClass="WorkDetailsVC" customModule="TableViewInsideCollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Tg-BH-ej8"/>
                         <viewControllerLayoutGuide type="bottom" id="doc-Qu-pQX"/>
