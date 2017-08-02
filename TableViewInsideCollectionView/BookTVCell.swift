@@ -22,7 +22,7 @@ class BookTVCell: UITableViewCell {
         bookTitleLabel.text = workObject.title //book Title
         authorNameLabel.text = "by \(authorName(from: workObject.authors))" //author Name
         editionEbookLabel.text = "\(workObject.numberOfEditions) editions (\(workObject.numberOfEbooks) ebook)"
-        firstPublishedLabel.text = "first published in \(workObject.firstPublishedYear)"
+        firstPublishedLabel.text = "First Published in \(workObject.firstPublishedYear)"
         //Image
         getImageFromWeb(ImageSearchURL.urlWithOutDefaultImage(forID: workObject.coverIdMedium).formattedURL) { (downloadedImage) in
             if downloadedImage == nil {

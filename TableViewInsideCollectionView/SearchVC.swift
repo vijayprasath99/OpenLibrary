@@ -26,6 +26,8 @@ class SearchVC: UIViewController {
         
         //Navigation Item
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: nil)
+        self.navigationItem.title = "Search Books"
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         //Activity Indicator
         self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
