@@ -28,7 +28,6 @@ enum OpenAPI {
             return "\(OPENAPI_PREFIX)/b/\(forID).jpg"
             
         case let .imageUrlWithOutDefaultImage(forID):
-            print(forID)
             return "\(OPENAPI_PREFIX)/b/\(forID).jpg?default=false"
             
         case let .searchUrl(forSearch):
