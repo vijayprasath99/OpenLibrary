@@ -19,12 +19,12 @@ class BookTVCell: UITableViewCell {
     func configureCell(with workObject : Work){
         self.backgroundView?.backgroundColor = UIColor.blue
         //Parameters
-        bookTitleLabel.text = workObject.title //book Title
+        bookTitleLabel.text = workObject.title_suggest //book Title
         authorNameLabel.text = "by \(authorName(from: workObject.authors))" //author Name
         editionEbookLabel.text = "\(workObject.numberOfEditions) editions (\(workObject.numberOfEbooks) ebook)"
         firstPublishedLabel.text = "First Published in \(workObject.firstPublishedYear)"
         //Image
-        getImageFromWeb(ImageSearchURL.urlWithOutDefaultImage(forID: workObject.coverIdMedium).formattedURL) { (downloadedImage) in
+        Network.sharedInstance.getImageFromWeb(OpenAPI.imageUrlWithOutDefaultImage(forID: workObject.coverIdMedium).formattedURL) { (downloadedImage) in
             if downloadedImage == nil {
                 self.bookImageView.image = #imageLiteral(resourceName: "image-not-available")
             } else {
@@ -49,28 +49,6 @@ class BookTVCell: UITableViewCell {
         return authorNameTemp
     }
     
-    private func getImageFromWeb(_ urlString: String, closure: @escaping (UIImage?) -> ()) {
-        guard let url = URL(string: urlString) else {
-            print("File : BookTVCell.swift | Func : getImageFromWeb | Err : Something wrong URL Conversion :  ")
-            return closure(nil)
-        }
-        let task = URLSession(configuration: .default).dataTask(with: url) { (data, response, error) in
-            guard error == nil else {
-                print("File : BookTVCell.swift | Func : getImageFromWeb | Err : \(String(describing: error))")
-                return closure(nil)
-            }
-            guard response != nil else {
-                print("File : BookTVCell.swift | Func : getImageFromWeb | Err : no response")
-                return closure(nil)
-            }
-            guard data != nil else {
-                print("File : BookTVCell.swift | Func : getImageFromWeb | Err : no data")
-                return closure(nil)
-            }
-            DispatchQueue.main.async {
-                closure(UIImage(data: data!))
-            }
-        }; task.resume()
-    }
+
 
 }

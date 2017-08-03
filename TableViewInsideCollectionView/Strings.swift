@@ -8,23 +8,31 @@
 
 import Foundation
 
+//#################################### Reuse Identifier ####################################
+
 let SEARCHVC_REUSE_IDENTIFIER : String = "BookViewCell"
+let MAINVC_TABLEVIEW_CELL_REUSE_IDENTIFIER : String = "CatagoryCell"
+let MAINVC_TABLEVIEW_CELL_COLLECTIONVIEW_CELL_REUSE_IDENTIFIER : String = "BookCell"
 
-fileprivate let IMAGESEARCH_PRE : String = "http://covers.openlibrary.org/b"
-fileprivate let IMAGESEARCH_POST : String = ".jpg"
-fileprivate let IMAGESEARCH_FALSE_DEFAULT_PARAMETER : String = "?default=false"
+//#################################### URL ####################################
 
-enum ImageSearchURL{
-    case url(forID : String)
-    case urlWithOutDefaultImage(forID : String)
+fileprivate let OPENAPI_PREFIX : String = "http://covers.openlibrary.org"
+enum OpenAPI {
+    case imageUrl(forID : String)
+    case imageUrlWithOutDefaultImage(forID : String)
+    case searchUrl(forSearch : String)
     
     var formattedURL : String {
         switch self{
-        case let .url(forID):
-            return "\(IMAGESEARCH_PRE)/\(forID)\(IMAGESEARCH_POST)"
+        case let .imageUrl(forID):
+            return "\(OPENAPI_PREFIX)/b/\(forID).jpg"
             
-        case let .urlWithOutDefaultImage(forID):
-            return "\(IMAGESEARCH_PRE)/\(forID)\(IMAGESEARCH_POST)\(IMAGESEARCH_FALSE_DEFAULT_PARAMETER)"
+        case let .imageUrlWithOutDefaultImage(forID):
+            print(forID)
+            return "\(OPENAPI_PREFIX)/b/\(forID).jpg?default=false"
+            
+        case let .searchUrl(forSearch):
+            return "https://openlibrary.org/subjects/\(forSearch.lowercased()).json"
         }
     }
 }

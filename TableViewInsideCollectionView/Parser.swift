@@ -23,6 +23,17 @@ class Parser {
         return works
     }
     
-    
+    func worksArray(fromJsonSubjectData data: Any) -> [Work]{
+        var worksArray = [Work]()
+        let json = data as? [String : Any]
+        if let works = json?["works"] as? [[String : Any]]{
+            for work in works{
+                let workObject = Work(jsonArray: work)
+                worksArray.append(workObject)
+//                print(workObject.title, workObject.lendingEdition_Medium)
+            }
+        }
+        return worksArray
+    }
     
 }
