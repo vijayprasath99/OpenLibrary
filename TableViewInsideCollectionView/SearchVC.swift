@@ -115,7 +115,12 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let work = worksArray?[indexPath.row]{
-            print(work.title, work.subtitle)
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: WORKDETAILSVC_STORYBOARDID) as? WorkDetailsVC else {
+                print("SearchVC | didSelectRowAt | Problem with instantiating view controller")
+                return
+            }
+            vc.workObject = work
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

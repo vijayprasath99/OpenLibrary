@@ -10,9 +10,13 @@ import Foundation
 
 //#################################### Reuse Identifier ####################################
 
+// Segue
 let SEARCHVC_REUSE_IDENTIFIER : String = "BookViewCell"
 let MAINVC_TABLEVIEW_CELL_REUSE_IDENTIFIER : String = "CatagoryCell"
 let MAINVC_TABLEVIEW_CELL_COLLECTIONVIEW_CELL_REUSE_IDENTIFIER : String = "BookCell"
+
+// Storyboard ID
+let WORKDETAILSVC_STORYBOARDID = "WorkDetailsVC"
 
 //#################################### URL ####################################
 

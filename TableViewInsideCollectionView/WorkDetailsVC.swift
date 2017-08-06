@@ -9,10 +9,14 @@
 import UIKit
 
 class WorkDetailsVC: UIViewController {
+    
+    var workObject : Work!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if workObject != nil {
+            print(workObject.title_suggest,workObject.subtitle, workObject.title)
+        }
     }
 }

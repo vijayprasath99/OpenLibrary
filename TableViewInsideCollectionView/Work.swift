@@ -19,6 +19,12 @@ class Work {
     private var _firstPublishedYear : Int?
     private var _hasFullText : Bool?
     private var _lendingEdition : String?
+    private var _goodReadID : [String]?
+    private var _libraryThingID : [String]?
+    private var _isbn : [String]?
+    private var _languagesAvailable : [String]?
+    private var _editionID : [String]?
+    private var _lastModified : Int?
     
     var title_suggest : String {
         if let temp = _title_suggest {
@@ -62,6 +68,71 @@ class Work {
         return Int(Int64.max)
     }
     
+    
+    var numberOfEbooks : Int {
+        if let temp = _numberOfEbooks {
+            return temp
+        }
+        return 0
+    }
+    
+    var numberOfEditions : Int {
+        if let temp = _numberOfEditions {
+            return temp
+        }
+        return 0
+    }
+    
+    
+    var goodReadID : [String] {
+        if let temp = _goodReadID {
+            return temp
+        }
+        return [""]
+    }
+    
+    var libraryThingID : [String] {
+        if let temp = _libraryThingID {
+            return temp
+        }
+        return [""]
+    }
+    
+    var isbn : [String] {
+        if let temp = _isbn {
+            return temp
+        }
+        return [""]
+    }
+    
+    var languagesAvailable : [String] {
+        if let temp = _languagesAvailable {
+            return temp
+        }
+        return [""]
+    }
+    
+    var editionID : [String] {
+        if let temp = _editionID {
+            return temp
+        }
+        return [""]
+    }
+    
+    var lastModifiedInString : String {
+        if let temp = _lastModified {
+            let date = NSDate(timeIntervalSince1970: TimeInterval(temp))
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeStyle = DateFormatter.Style.long //Set time style
+            dateFormatter.dateStyle = DateFormatter.Style.long //Set date style
+            dateFormatter.timeZone = TimeZone.current
+            let localDate = dateFormatter.string(from: date as Date)
+            return localDate
+        }
+        return "Unknown"
+    }
+    
+    //FOR IMAGES
     var coverIdSmall : String{
         if let temp = _coverID {
             return "olid/\(temp)-S"
@@ -82,26 +153,21 @@ class Work {
         }
         return "olid/error"
     }
-    
-    var numberOfEbooks : Int {
-        if let temp = _numberOfEbooks {
-            return temp
-        }
-        return 0
-    }
-    
-    var numberOfEditions : Int {
-        if let temp = _numberOfEditions {
-            return temp
-        }
-        return 0
-    }
-    
+
     var lendingEdition_Medium : String{
         if let temp = _lendingEdition {
             return "olid/\(temp)-M"
         }
         return "olid/error"
+    }
+    
+    
+    // FOR IMAGES AND GETTING TO NEXT BOOKS
+    var editionFormattedKeyArrayForAPI : [String]{
+        if let temp = _editionID.map({ "olid/\($0)" }) {
+            return [temp]
+        }
+        return [""]
     }
     
     init(jsonArray doc: [String : Any]){
@@ -115,6 +181,12 @@ class Work {
         self._numberOfEbooks = doc["ebook_count_i"] as? Int
         self._numberOfEditions = doc["edition_count"] as? Int
         self._lendingEdition = doc["lending_edition"] as? String
+        self._goodReadID = doc["d_goodreads"] as? [String]
+        self._libraryThingID = doc["id_librarything"] as? [String]
+        self._isbn = doc["isbn"] as? [String]
+        self._languagesAvailable = doc["language"] as? [String]
+        self._editionID = doc["edition_key"] as? [String]
+        self._lastModified = doc["last_modified_i"] as? Int
     }
 }
 

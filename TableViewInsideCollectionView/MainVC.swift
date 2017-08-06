@@ -95,5 +95,16 @@ extension MainVC : UICollectionViewDelegate, UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let work = model[collectionView.tag][indexPath.item] as? Work else {
+            print("MainVC | didSelectItemAt | Err : Problem getting work object");
+            return
+        }
+        
+        let vc = sotry
+        
+        
+    }
 }
 
