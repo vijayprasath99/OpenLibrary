@@ -11,14 +11,23 @@ import UIKit
 class MainVC: UIViewController{
     
     var refreshControl: UIRefreshControl!
-    var subjects = ["art","science","success","textbooks","science_fiction"]
+    var subjects = FileManager.sharedInstance.loadSubjects()
     var model = [[Work]]()
     
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        //Navigation Controller Color
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 126/255, blue: 163/255, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Menlo", size: 20)!,
+                                                                   NSForegroundColorAttributeName: UIColor.white]
+//        Bradley Hand | Menlo
+
     
         //Table View Parameters!
         tableView.dataSource = self
@@ -63,7 +72,7 @@ extension MainVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.model.count
+        return self.model.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -97,14 +106,14 @@ extension MainVC : UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let work = model[collectionView.tag][indexPath.item] as? Work else {
-            print("MainVC | didSelectItemAt | Err : Problem getting work object");
+        let work = model[collectionView.tag][indexPath.item]
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: WORKDETAILSVC_STORYBOARDID) as? WorkDetailsVC else {
+            print("MainVC | didSelectItemAt | Err : Problem instantiating WorkDeatilsVC");
             return
         }
         
-        let vc = sotry
-        
-        
+        vc.workObject = work
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
-

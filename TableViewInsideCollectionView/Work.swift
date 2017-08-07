@@ -26,6 +26,14 @@ class Work {
     private var _editionID : [String]?
     private var _lastModified : Int?
     
+    var title_full : String{
+        if let temp = _title_suggest {
+            return "\(temp) \(subtitle)"
+        } else {
+            return "\(title) \(subtitle)"
+        }
+    }
+    
     var title_suggest : String {
         if let temp = _title_suggest {
             return temp
@@ -61,11 +69,11 @@ class Work {
         return false
     }
     
-    var firstPublishedYear : Int {
+    var firstPublishedYear : String {
         if let temp = _firstPublishedYear {
-            return temp
+            return "\(temp)"
         }
-        return Int(Int64.max)
+        return "Unknown"
     }
     
     
@@ -88,46 +96,40 @@ class Work {
         if let temp = _goodReadID {
             return temp
         }
-        return [""]
+        return ["Not Available"]
     }
     
     var libraryThingID : [String] {
         if let temp = _libraryThingID {
             return temp
         }
-        return [""]
+        return ["Not Available"]
     }
     
     var isbn : [String] {
         if let temp = _isbn {
             return temp
         }
-        return [""]
+        return ["Not Available"]
     }
     
     var languagesAvailable : [String] {
         if let temp = _languagesAvailable {
             return temp
         }
-        return [""]
+        return ["Not Available"]
     }
     
     var editionID : [String] {
         if let temp = _editionID {
             return temp
         }
-        return [""]
+        return []
     }
     
     var lastModifiedInString : String {
         if let temp = _lastModified {
-            let date = NSDate(timeIntervalSince1970: TimeInterval(temp))
-            let dateFormatter = DateFormatter()
-            dateFormatter.timeStyle = DateFormatter.Style.long //Set time style
-            dateFormatter.dateStyle = DateFormatter.Style.long //Set date style
-            dateFormatter.timeZone = TimeZone.current
-            let localDate = dateFormatter.string(from: date as Date)
-            return localDate
+            return Parser.sharedInstance.date(fromUnixTimeStamp: "\(temp)")
         }
         return "Unknown"
     }
@@ -164,10 +166,11 @@ class Work {
     
     // FOR IMAGES AND GETTING TO NEXT BOOKS
     var editionFormattedKeyArrayForAPI : [String]{
-        if let temp = _editionID.map({ "olid/\($0)" }) {
-            return [temp]
+        if let temp = _editionID {
+            let tempWithOutOverlay : [String] = temp.map({ "olid/\($0)" })
+            return tempWithOutOverlay
         }
-        return [""]
+        return []
     }
     
     init(jsonArray doc: [String : Any]){

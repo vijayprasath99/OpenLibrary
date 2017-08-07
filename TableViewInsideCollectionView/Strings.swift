@@ -14,9 +14,11 @@ import Foundation
 let SEARCHVC_REUSE_IDENTIFIER : String = "BookViewCell"
 let MAINVC_TABLEVIEW_CELL_REUSE_IDENTIFIER : String = "CatagoryCell"
 let MAINVC_TABLEVIEW_CELL_COLLECTIONVIEW_CELL_REUSE_IDENTIFIER : String = "BookCell"
+let WORKDETAILEDVC_TABLEVIEW_CELL_REUSE_IDENTIFIER : String = "BookCell"
 
 // Storyboard ID
 let WORKDETAILSVC_STORYBOARDID = "WorkDetailsVC"
+let BOOKBROWSERVC_STORYBOARDID = "BookViewBrowser"
 
 //#################################### URL ####################################
 
@@ -25,6 +27,7 @@ enum OpenAPI {
     case imageUrl(forID : String)
     case imageUrlWithOutDefaultImage(forID : String)
     case searchUrl(forSearch : String)
+    case bookUrl(forID : String)
     
     var formattedURL : String {
         switch self{
@@ -36,6 +39,9 @@ enum OpenAPI {
             
         case let .searchUrl(forSearch):
             return "https://openlibrary.org/subjects/\(forSearch.lowercased()).json"
+            
+        case let .bookUrl(forID):
+            return "http://openlibrary.org/api/volumes/brief/\(forID).json"
         }
     }
 }

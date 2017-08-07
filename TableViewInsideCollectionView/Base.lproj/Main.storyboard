@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rel-Pp-hpb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rel-Pp-hpb">
                                 <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -34,7 +34,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-HK-2Af">
-                                                    <rect key="frame" x="8" y="4" width="406" height="25"/>
+                                                    <rect key="frame" x="8" y="4" width="760" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="6j4-70-5Wc"/>
                                                     </constraints>
@@ -43,7 +43,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zNy-Vg-4aY">
-                                                    <rect key="frame" x="8" y="37" width="398" height="146.5"/>
+                                                    <rect key="frame" x="8" y="37" width="752" height="146.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kku-5c-kTx">
                                                         <size key="itemSize" width="110" height="140"/>
@@ -162,11 +162,11 @@
                                 <rect key="frame" x="0.0" y="108" width="768" height="916"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookViewCell" rowHeight="120" id="4Pu-s7-Wzh" customClass="BookTVCell" customModule="TableViewInsideCollectionView" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BookViewCell" rowHeight="120" id="4Pu-s7-Wzh" customClass="BookTVCell" customModule="TableViewInsideCollectionView" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="768" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Pu-s7-Wzh" id="eaf-Ut-mWg">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="702" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-g7-Dlx">
@@ -176,25 +176,25 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6jm-8a-ZKf">
-                                                    <rect key="frame" x="123" y="8" width="273" height="104"/>
+                                                    <rect key="frame" x="123" y="8" width="594" height="104"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="my1-M8-IAI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="273" height="33.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="594" height="44.5"/>
                                                             <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdU-AR-41W">
-                                                            <rect key="frame" x="0.0" y="33.5" width="52" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="44.5" width="52" height="25.5"/>
                                                             <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Xde-Hh-bcX">
-                                                            <rect key="frame" x="0.0" y="53" width="273" height="51"/>
+                                                            <rect key="frame" x="0.0" y="70" width="594" height="34"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editions &amp; ebook count" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="cOs-Dr-YQZ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="136.5" height="51"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="297" height="34"/>
                                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -203,7 +203,7 @@
                                                                     </variation>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="first published" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="w61-WF-4OB">
-                                                                    <rect key="frame" x="136.5" y="0.0" width="136.5" height="51"/>
+                                                                    <rect key="frame" x="297" y="0.0" width="297" height="34"/>
                                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -295,7 +295,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2xS-Ln-GeI">
                                         <rect key="frame" x="0.0" y="0.0" width="728" height="784"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDH-a2-igV">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WDH-a2-igV">
                                                 <rect key="frame" x="0.0" y="0.0" width="728" height="220"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KhS-4F-XjH">
@@ -305,11 +305,14 @@
                                                             <constraint firstAttribute="width" constant="150" id="qBf-SZ-V25"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXG-Sn-fxq">
-                                                        <rect key="frame" x="150" y="0.0" width="578" height="220"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXG-Sn-fxq">
+                                                        <rect key="frame" x="160" y="0.0" width="568" height="220"/>
+                                                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="35"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=compact">
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="25"/>
+                                                        </variation>
                                                     </label>
                                                 </subviews>
                                             </stackView>
@@ -317,134 +320,298 @@
                                                 <rect key="frame" x="0.0" y="220" width="728" height="564"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SEs-Od-2oE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="107" height="80.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="728" height="80.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr7-63-8w6">
-                                                                <rect key="frame" x="0.0" y="30" width="65" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="0.0" y="30" width="70" height="20.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="70" id="3TG-F2-No3"/>
+                                                                    <constraint firstAttribute="height" constant="20.5" id="d56-SD-Ebu"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDx-pO-W5k">
-                                                                <rect key="frame" x="65" y="30" width="42" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDx-pO-W5k">
+                                                                <rect key="frame" x="70" y="28.5" width="658" height="24"/>
+                                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Fr7-63-8w6" firstAttribute="leading" secondItem="SEs-Od-2oE" secondAttribute="leading" id="fbd-Pz-dXT"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ihs-CN-cfh">
-                                                        <rect key="frame" x="0.0" y="80.5" width="160" height="80.5"/>
+                                                        <rect key="frame" x="0.0" y="80.5" width="176.5" height="80.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Published:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yA5-VO-IYM">
-                                                                <rect key="frame" x="0.0" y="30" width="118" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Published : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yA5-VO-IYM">
+                                                                <rect key="frame" x="0.0" y="30" width="135" height="20.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20.5" id="Ya7-Cc-udL"/>
+                                                                    <constraint firstAttribute="width" constant="135" id="wK3-Pn-jwV"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUx-tM-PwB">
-                                                                <rect key="frame" x="118" y="30" width="42" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUx-tM-PwB">
+                                                                <rect key="frame" x="135" y="28.5" width="41.5" height="24"/>
+                                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="yA5-VO-IYM" firstAttribute="leading" secondItem="Ihs-CN-cfh" secondAttribute="leading" id="YqW-NF-Hdc"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="31v-AS-1Cn">
-                                                        <rect key="frame" x="0.0" y="161" width="89" height="80.5"/>
+                                                        <rect key="frame" x="0.0" y="161" width="728" height="80.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F8-RS-Oa2">
-                                                                <rect key="frame" x="0.0" y="30" width="47" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0F8-RS-Oa2">
+                                                                <rect key="frame" x="0.0" y="30.5" width="50" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="iz7-EX-wvJ"/>
+                                                                    <constraint firstAttribute="height" constant="20.5" id="yMS-mM-dD0"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOJ-DM-Jfx">
-                                                                <rect key="frame" x="47" y="30" width="42" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOJ-DM-Jfx">
+                                                                <rect key="frame" x="50" y="28.5" width="678" height="24"/>
+                                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="0F8-RS-Oa2" firstAttribute="leading" secondItem="31v-AS-1Cn" secondAttribute="leading" id="d9B-a4-eof"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2xz-gb-QqI">
-                                                        <rect key="frame" x="0.0" y="241.5" width="181" height="81"/>
+                                                        <rect key="frame" x="0.0" y="241.5" width="728" height="81"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Library Anything : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzK-Q7-icI">
-                                                                <rect key="frame" x="0.0" y="30.5" width="139" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="0.0" y="30" width="150" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20.5" id="mtR-YA-SKu"/>
+                                                                    <constraint firstAttribute="width" constant="150" id="vb1-kU-Li4"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXS-iX-GqD">
-                                                                <rect key="frame" x="139" y="30.5" width="42" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXS-iX-GqD">
+                                                                <rect key="frame" x="150" y="28.5" width="578" height="24"/>
+                                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="UzK-Q7-icI" firstAttribute="leading" secondItem="2xz-gb-QqI" secondAttribute="leading" id="tgR-w2-Rt2"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h4A-9u-gP6">
-                                                        <rect key="frame" x="0.0" y="322.5" width="140.5" height="80.5"/>
+                                                        <rect key="frame" x="0.0" y="322.5" width="728" height="80.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Read : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHa-h6-VHg" userLabel="Good Read :">
-                                                                <rect key="frame" x="0.0" y="30" width="98.5" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="0.0" y="30" width="100" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="DKI-aW-R1K"/>
+                                                                    <constraint firstAttribute="height" constant="20.5" id="O4u-hp-Hb9"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPb-mK-adK">
-                                                                <rect key="frame" x="98.5" y="30" width="42" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPb-mK-adK">
+                                                                <rect key="frame" x="100" y="28" width="628" height="24"/>
+                                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="SHa-h6-VHg" firstAttribute="leading" secondItem="h4A-9u-gP6" secondAttribute="leading" id="wkD-wa-UTY"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uDW-bA-2lk">
-                                                        <rect key="frame" x="0.0" y="403" width="211.5" height="80.5"/>
+                                                        <rect key="frame" x="0.0" y="403" width="728" height="80.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages Available : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEO-wu-tQY">
-                                                                <rect key="frame" x="0.0" y="30" width="169.5" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="0.0" y="30" width="180" height="20.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="180" id="Adw-XH-mRo"/>
+                                                                    <constraint firstAttribute="height" constant="20.5" id="vvb-e2-h80"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MJ-EX-q3u">
-                                                                <rect key="frame" x="169.5" y="30" width="42" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MJ-EX-q3u">
+                                                                <rect key="frame" x="180" y="28" width="548" height="24"/>
+                                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="bEO-wu-tQY" firstAttribute="leading" secondItem="uDW-bA-2lk" secondAttribute="leading" id="ydB-GS-pfB"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IXD-G1-dxJ">
-                                                        <rect key="frame" x="0.0" y="483.5" width="159.5" height="80.5"/>
+                                                        <rect key="frame" x="0.0" y="483.5" width="728" height="80.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Modified : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhL-ZG-R29">
-                                                                <rect key="frame" x="0.0" y="30" width="117.5" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="0.0" y="30" width="120" height="20.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="KOh-nJ-Uzd"/>
+                                                                    <constraint firstAttribute="height" constant="20.5" id="RRi-SR-vKU"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foy-F9-NAP">
-                                                                <rect key="frame" x="117.5" y="30" width="42" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foy-F9-NAP">
+                                                                <rect key="frame" x="120" y="28" width="608" height="24"/>
+                                                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="uhL-ZG-R29" firstAttribute="leading" secondItem="IXD-G1-dxJ" secondAttribute="leading" id="bqz-9k-3Xz"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="SEs-Od-2oE" firstAttribute="leading" secondItem="4SE-vb-SRW" secondAttribute="leading" id="BOc-nU-pJC"/>
+                                                    <constraint firstItem="31v-AS-1Cn" firstAttribute="leading" secondItem="4SE-vb-SRW" secondAttribute="leading" id="HWI-pb-szR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="31v-AS-1Cn" secondAttribute="trailing" id="Lk2-g2-BAo"/>
+                                                    <constraint firstItem="h4A-9u-gP6" firstAttribute="leading" secondItem="4SE-vb-SRW" secondAttribute="leading" id="YME-qw-cRL"/>
+                                                    <constraint firstItem="IXD-G1-dxJ" firstAttribute="leading" secondItem="4SE-vb-SRW" secondAttribute="leading" id="YQB-ey-diG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SEs-Od-2oE" secondAttribute="trailing" id="ebB-Dd-308"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IXD-G1-dxJ" secondAttribute="trailing" id="pIt-zB-jWg"/>
+                                                    <constraint firstItem="uDW-bA-2lk" firstAttribute="leading" secondItem="4SE-vb-SRW" secondAttribute="leading" id="pT0-ze-18q"/>
+                                                    <constraint firstItem="2xz-gb-QqI" firstAttribute="leading" secondItem="4SE-vb-SRW" secondAttribute="leading" id="q4F-zz-MXA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="h4A-9u-gP6" secondAttribute="trailing" id="rhr-us-oAc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2xz-gb-QqI" secondAttribute="trailing" id="rq8-j9-FUs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uDW-bA-2lk" secondAttribute="trailing" id="wmN-tz-fjs"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bJC-t2-MJ9">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bJC-t2-MJ9">
                                         <rect key="frame" x="0.0" y="784" width="728" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="wU1-du-fGj"/>
                                         </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" rowHeight="120" id="ZEe-9f-fWY" customClass="WVCBookCell" customModule="TableViewInsideCollectionView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="728" height="120"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZEe-9f-fWY" id="7Lh-zU-3fL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="728" height="120"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Nb7-hQ-xY5">
+                                                            <rect key="frame" x="101" y="16" width="611" height="60"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="rh1-sZ-8Pp">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="551" height="60"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher - Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqv-D0-QTq">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="551" height="35"/>
+                                                                            <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdL-Vh-WgN">
+                                                                            <rect key="frame" x="0.0" y="35" width="551" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="HoeflerText-Italic" family="Hoefler Text" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="zqv-D0-QTq" secondAttribute="trailing" id="Dgm-hm-kN0"/>
+                                                                        <constraint firstItem="tdL-Vh-WgN" firstAttribute="leading" secondItem="rh1-sZ-8Pp" secondAttribute="leading" id="DlB-Cr-bj9"/>
+                                                                        <constraint firstItem="zqv-D0-QTq" firstAttribute="leading" secondItem="rh1-sZ-8Pp" secondAttribute="leading" id="JQH-XN-1Ix"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="tdL-Vh-WgN" secondAttribute="trailing" id="g6w-Nz-Jhv"/>
+                                                                    </constraints>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yZx-Ey-kFC">
+                                                                    <rect key="frame" x="551" y="0.0" width="60" height="60"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs2-RB-3GE">
+                                                                            <rect key="frame" x="3" y="0.0" width="54" height="30"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="30" id="1WR-YW-aXo"/>
+                                                                                <constraint firstAttribute="width" constant="54" id="SOh-xa-RZk"/>
+                                                                            </constraints>
+                                                                            <state key="normal" title="Preview"/>
+                                                                            <connections>
+                                                                                <action selector="previewButton:" destination="ZEe-9f-fWY" eventType="touchUpInside" id="9rT-c9-o5l"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiw-v0-qYr">
+                                                                            <rect key="frame" x="3" y="30" width="54" height="30"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="30" id="Sbu-4S-2Zw"/>
+                                                                                <constraint firstAttribute="width" constant="54" id="mVr-0C-cYc"/>
+                                                                            </constraints>
+                                                                            <state key="normal" title="Read"/>
+                                                                            <connections>
+                                                                                <action selector="readButtonPressed:" destination="ZEe-9f-fWY" eventType="touchUpInside" id="fw2-mL-kaz"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="Adc-Qx-4Zf"/>
+                                                                    </constraints>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="yZx-Ey-kFC" secondAttribute="bottom" id="SLc-VG-PSd"/>
+                                                                <constraint firstItem="rh1-sZ-8Pp" firstAttribute="top" secondItem="Nb7-hQ-xY5" secondAttribute="top" id="brp-py-592"/>
+                                                                <constraint firstItem="rh1-sZ-8Pp" firstAttribute="leading" secondItem="Nb7-hQ-xY5" secondAttribute="leading" id="hNh-u0-Ved"/>
+                                                                <constraint firstItem="yZx-Ey-kFC" firstAttribute="leading" secondItem="rh1-sZ-8Pp" secondAttribute="trailing" id="k0W-lR-bsC"/>
+                                                                <constraint firstAttribute="trailing" secondItem="yZx-Ey-kFC" secondAttribute="trailing" id="rKX-MV-3AF"/>
+                                                                <constraint firstItem="yZx-Ey-kFC" firstAttribute="top" secondItem="Nb7-hQ-xY5" secondAttribute="top" id="vAh-cF-oVu"/>
+                                                                <constraint firstAttribute="bottom" secondItem="rh1-sZ-8Pp" secondAttribute="bottom" id="zTa-Ol-Dxb"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-BD-Nay">
+                                                            <rect key="frame" x="15" y="8" width="78" height="84"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="78" id="gFf-K1-eTY"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="Nb7-hQ-xY5" secondAttribute="trailing" constant="8" id="02F-zT-YZU"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="Nb7-hQ-xY5" secondAttribute="bottom" constant="8" id="90h-2W-z32"/>
+                                                        <constraint firstItem="Nb7-hQ-xY5" firstAttribute="top" secondItem="7Lh-zU-3fL" secondAttribute="topMargin" constant="8" id="D59-X5-QFl"/>
+                                                        <constraint firstItem="8Nh-BD-Nay" firstAttribute="leading" secondItem="7Lh-zU-3fL" secondAttribute="leading" constant="15" id="H6L-4S-gZX"/>
+                                                        <constraint firstItem="Nb7-hQ-xY5" firstAttribute="leading" secondItem="8Nh-BD-Nay" secondAttribute="trailing" constant="8" id="LBf-oX-7ta"/>
+                                                        <constraint firstAttribute="bottom" secondItem="8Nh-BD-Nay" secondAttribute="bottom" id="N0L-6u-lZ2"/>
+                                                        <constraint firstItem="8Nh-BD-Nay" firstAttribute="top" secondItem="7Lh-zU-3fL" secondAttribute="top" constant="8" id="rSG-hn-Aa5"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="availabilityLbl" destination="tdL-Vh-WgN" id="HNq-mH-Rpm"/>
+                                                    <outlet property="editionImageView" destination="8Nh-BD-Nay" id="Sze-Dd-Rc7"/>
+                                                    <outlet property="previewButtonOutlet" destination="Xs2-RB-3GE" id="zSp-SH-oxm"/>
+                                                    <outlet property="publisherDateLbl" destination="zqv-D0-QTq" id="RvJ-7z-74H"/>
+                                                    <outlet property="readButtonOutlet" destination="yiw-v0-qYr" id="Rxa-J5-A60"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -468,10 +635,40 @@
                             <constraint firstItem="64w-xA-cqK" firstAttribute="top" secondItem="1Tg-BH-ej8" secondAttribute="bottom" constant="10" id="vJy-9k-ebL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="authorLbl" destination="YDx-pO-W5k" id="cGn-IA-gLT"/>
+                        <outlet property="bookImageView" destination="KhS-4F-XjH" id="JNw-PP-83O"/>
+                        <outlet property="firstPublishedLbl" destination="UUx-tM-PwB" id="XFj-lb-IFr"/>
+                        <outlet property="goodReadLbl" destination="vPb-mK-adK" id="4HW-Ih-LiC"/>
+                        <outlet property="isbnLbl" destination="tOJ-DM-Jfx" id="iWQ-cB-Kad"/>
+                        <outlet property="languagesAvailableLbl" destination="3MJ-EX-q3u" id="thN-FJ-WO0"/>
+                        <outlet property="lastModifiedLbl" destination="foy-F9-NAP" id="vHj-i4-XPw"/>
+                        <outlet property="libraryAnythingLbl" destination="gXS-iX-GqD" id="Alg-hB-4wV"/>
+                        <outlet property="tableView" destination="bJC-t2-MJ9" id="vZn-Ei-xr2"/>
+                        <outlet property="titleLbl" destination="sXG-Sn-fxq" id="DZr-qk-YC2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ufo-2k-rOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1917.1875" y="119.53124999999999"/>
+        </scene>
+        <!--Book BrowserVC-->
+        <scene sceneID="lU7-IA-Sge">
+            <objects>
+                <viewController storyboardIdentifier="BookViewBrowser" id="oHG-zx-3Et" customClass="BookBrowserVC" customModule="TableViewInsideCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8W7-PL-Tse"/>
+                        <viewControllerLayoutGuide type="bottom" id="JdB-4v-ljh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wK8-Qc-WMd">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ww9-z0-wbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2590" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1LB-Zx-Xe1">

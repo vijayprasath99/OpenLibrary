@@ -36,4 +36,23 @@ class Parser {
         return worksArray
     }
     
+    func bookObject(fromJsonData data : Any) -> Book{
+        if let json = data as? [String : Any] {
+            let bookObject = Book(jsonArray: json)
+            return bookObject
+        }
+        let dummy = "" as Any
+        return Book(jsonArray: ["" : dummy])
+    }
+    
+    func date(fromUnixTimeStamp date : String) -> String{
+        let date = NSDate(timeIntervalSince1970: TimeInterval(date)!)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = DateFormatter.Style.long //Set time style
+        dateFormatter.dateStyle = DateFormatter.Style.long //Set date style
+        dateFormatter.timeZone = TimeZone.current
+        let localDate = dateFormatter.string(from: date as Date)
+        return localDate
+    }
+    
 }
