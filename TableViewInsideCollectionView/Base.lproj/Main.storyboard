@@ -162,7 +162,7 @@
                                 <rect key="frame" x="0.0" y="108" width="768" height="916"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BookViewCell" rowHeight="120" id="4Pu-s7-Wzh" customClass="BookTVCell" customModule="TableViewInsideCollectionView" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BookViewCell" rowHeight="120" id="4Pu-s7-Wzh" customClass="SVCBookCell" customModule="TableViewInsideCollectionView" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="768" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Pu-s7-Wzh" id="eaf-Ut-mWg">
@@ -237,11 +237,11 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="authorNameLabel" destination="bdU-AR-41W" id="g6M-dL-vYg"/>
-                                            <outlet property="bookImageView" destination="Cxf-g7-Dlx" id="Qrd-Lk-dbs"/>
-                                            <outlet property="bookTitleLabel" destination="my1-M8-IAI" id="05X-BT-el0"/>
-                                            <outlet property="editionEbookLabel" destination="cOs-Dr-YQZ" id="gk0-iI-g8v"/>
-                                            <outlet property="firstPublishedLabel" destination="w61-WF-4OB" id="I5l-Ob-Hu3"/>
+                                            <outlet property="authorNameLabel" destination="bdU-AR-41W" id="FSD-qV-Hhv"/>
+                                            <outlet property="bookImageView" destination="Cxf-g7-Dlx" id="IX5-t3-bMk"/>
+                                            <outlet property="bookTitleLabel" destination="my1-M8-IAI" id="70g-0W-l3y"/>
+                                            <outlet property="editionEbookLabel" destination="cOs-Dr-YQZ" id="9ZH-Ei-IkA"/>
+                                            <outlet property="firstPublishedLabel" destination="w61-WF-4OB" id="SDp-3V-4Wp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

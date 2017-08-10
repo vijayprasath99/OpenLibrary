@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652D63EE1F3CAE4600CB05F1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D63ED1F3CAE4600CB05F1 /* SwiftyJSON.swift */; };
 		65326F221F2E62E900684ECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65326F211F2E62E900684ECB /* AppDelegate.swift */; };
 		65326F241F2E62E900684ECB /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65326F231F2E62E900684ECB /* MainVC.swift */; };
 		65326F271F2E62E900684ECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65326F251F2E62E900684ECB /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		652D63ED1F3CAE4600CB05F1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		65326F1E1F2E62E900684ECB /* TableViewInsideCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewInsideCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65326F211F2E62E900684ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65326F231F2E62E900684ECB /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		652D63EC1F3CADA100CB05F1 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				652D63ED1F3CAE4600CB05F1 /* SwiftyJSON.swift */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
 		65326F151F2E62E900684ECB = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		65326F201F2E62E900684ECB /* TableViewInsideCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				652D63EC1F3CADA100CB05F1 /* Lib */,
 				654D1F1B1F390A3100349DDB /* Protocol */,
 				654D1EEE1F38BEF000349DDB /* Resources */,
 				65875C051F2FCDA100D97CEC /* Constants */,
@@ -322,6 +333,7 @@
 				65875C0B1F30C40400D97CEC /* Constants.swift in Sources */,
 				65326F241F2E62E900684ECB /* MainVC.swift in Sources */,
 				65851C281F324768005D2033 /* MVCBookCell.swift in Sources */,
+				652D63EE1F3CAE4600CB05F1 /* SwiftyJSON.swift in Sources */,
 				654D1EED1F38083F00349DDB /* BookBrowserVC.swift in Sources */,
 				65851C261F32474C005D2033 /* MVCCatagoryCell.swift in Sources */,
 				65875C021F2FBF2200D97CEC /* Network.swift in Sources */,
