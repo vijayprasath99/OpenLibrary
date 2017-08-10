@@ -34,19 +34,16 @@ class WorkDetailsVC: UIViewController {
         tableView.delegate = self
         
         configureCell()
-        
-        // Tabel View Elements
-
     }
     
     func configureCell(){
         titleLbl.text = workObject.title_full
-        authorLbl.text = string(fromArray: workObject.authors)
+        authorLbl.text = Parser.sharedInstance.string(fromArray: workObject.authors)
         firstPublishedLbl.text = "\(workObject.firstPublishedYear)"
-        isbnLbl.text = "\(string(fromArray: workObject.isbn))"
-        libraryAnythingLbl.text = "\(string(fromArray: workObject.libraryThingID))"
-        goodReadLbl.text = "\(string(fromArray: workObject.goodReadID))"
-        languagesAvailableLbl.text = "\(string(fromArray: workObject.languagesAvailable.flatMap({ $0.capitalized })))"
+        isbnLbl.text = "\(Parser.sharedInstance.string(fromArray: workObject.isbn))"
+        libraryAnythingLbl.text = "\(Parser.sharedInstance.string(fromArray: workObject.libraryThingID))"
+        goodReadLbl.text = "\(Parser.sharedInstance.string(fromArray: workObject.goodReadID))"
+        languagesAvailableLbl.text = "\(Parser.sharedInstance.string(fromArray: workObject.languagesAvailable.flatMap({ $0.capitalized })))"
         lastModifiedLbl.text = workObject.lastModifiedInString
         
         // Set Image
@@ -67,11 +64,11 @@ class WorkDetailsVC: UIViewController {
         } else {
             for edition in workObject.editionFormattedKeyArrayForAPI{
                 let bookUrl = OpenAPI.bookUrl(forID: edition).formattedURL
-                Network.sharedInstance.downloadJSON2(from: bookUrl, completion: { (downloadedJSON) in
+                Network.sharedInstance.downloadJSON2(from: bookUrl, completion: { [unowned self] (downloadedJSON) in
                     let book = Parser.sharedInstance.bookObject(fromJsonData: downloadedJSON)
                     if book.isValiedBook {
                         self.editionTableDataSource.append(book)
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.async { 
                             self.tableView.reloadData()
                         }
                     }
@@ -80,8 +77,8 @@ class WorkDetailsVC: UIViewController {
         }
     }
     
-    private func downloadAndSetImage(fromURL imageURL: String){
-        Network.sharedInstance.getImageFromWeb(imageURL) { (downloadedImage) in
+    fileprivate func downloadAndSetImage(fromURL imageURL: String){
+        Network.sharedInstance.getImageFromWeb(imageURL) { [unowned self] (downloadedImage) in
             if let image = downloadedImage {
                 DispatchQueue.main.async {
                     self.bookImageView.image = image
@@ -89,21 +86,6 @@ class WorkDetailsVC: UIViewController {
                 }
             }
         }
-    }
-    
-    private func string<T>(fromArray array: [T]) -> String{
-        var str : String = ""
-        if array.count == 1 {
-            str = "\(array[0])"
-            return str
-        } else if array.count > 1 {
-            str = "\(array[0])"
-            for i in 1..<array.count {
-                str = "\(str), \(array[i])"
-            }
-            return str
-        }
-        return str
     }
 }
 

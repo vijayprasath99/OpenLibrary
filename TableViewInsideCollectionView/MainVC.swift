@@ -24,8 +24,7 @@ class MainVC: UIViewController{
         //Navigation Controller Color
         navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 126/255, blue: 163/255, alpha: 1)
         navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Menlo", size: 20)!,
-                                                                   NSForegroundColorAttributeName: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Menlo", size: 20)!, NSForegroundColorAttributeName: UIColor.white]
 //        Bradley Hand | Menlo
 
     
@@ -47,12 +46,12 @@ class MainVC: UIViewController{
     
     }
     
-    func refresh(sender:AnyObject) {
+    @objc fileprivate func refresh(sender:AnyObject) {
         self.tableView.reloadData()
         refreshControl.endRefreshing()
     }
 
-    func downloadModelData(completionHandler : @escaping ()->()){
+    private func downloadModelData(completionHandler : @escaping ()->()){
         
         for subject in subjects {
             let url = OpenAPI.searchUrl(forSearch: subject).formattedURL

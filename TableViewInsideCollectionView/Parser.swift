@@ -55,4 +55,19 @@ class Parser {
         return localDate
     }
     
+    func string<T>(fromArray array: [T]) -> String{
+        var str : String = ""
+        if array.count == 1 {
+            str = "\(array[0])"
+            return str
+        } else if array.count > 1 {
+            str = "\(array[0])"
+            for i in 1..<array.count {
+                str = "\(str), \(array[i])"
+            }
+            return str
+        }
+        return str
+    }
+    
 }
