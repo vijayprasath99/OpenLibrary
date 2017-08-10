@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "654D1F211F3A07E600349DDB"
+               BuildableName = "TableViewInsideCollectionViewTests.xctest"
+               BlueprintName = "TableViewInsideCollectionViewTests"
+               ReferencedContainer = "container:TableViewInsideCollectionView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

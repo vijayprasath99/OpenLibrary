@@ -10,7 +10,7 @@ import UIKit
 
 class WVCBookCell: UITableViewCell {
     
-    var parentVC : WorkDetailsVC!
+    weak var buttonDeligate : ControlTransferDeligate?
     var bookObject : Book!
     
     @IBOutlet weak var editionImageView: UIImageView!
@@ -25,9 +25,9 @@ class WVCBookCell: UITableViewCell {
         // Initialization code
     }
     
-    func configureCell(withBook book: Book, instantiatingViewController : WorkDetailsVC){
-        parentVC = instantiatingViewController
+    func configureCell(withBook book: Book, deligateForPassingControl controlTransferDeligate : ControlTransferDeligate){
         bookObject = book
+        buttonDeligate = controlTransferDeligate
         let publisherName : String = book.publisher != "NA" ? book.publisher : "Unknown Publisher"
         let publishDate : String = book.publishedDate != "NA" ? book.publishedDate : "Publish date not available"
         let availabiltiy : String = book.ebookAvailabilty != "NA" ? book.ebookAvailabilty : "Not Available"
@@ -58,11 +58,11 @@ class WVCBookCell: UITableViewCell {
     }
     
     @IBAction func previewButton(_ sender: UIButton) {
-        parentVC.bringUpBrowser(forUrl: bookObject.previewUrl)
+        buttonDeligate?.bringUpBrowser(forUrl: bookObject.previewUrl)
     }
     
     @IBAction func readButtonPressed(_ sender: UIButton) {
-        parentVC.bringUpBrowser(forUrl: bookObject.bookUrl)
+        buttonDeligate?.bringUpBrowser(forUrl: bookObject.previewUrl)
     }
 
 }

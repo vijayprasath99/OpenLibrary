@@ -23,7 +23,7 @@ class MainVC: UIViewController{
         
         //Navigation Controller Color
         navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 126/255, blue: 163/255, alpha: 1)
-        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Menlo", size: 20)!,
                                                                    NSForegroundColorAttributeName: UIColor.white]
 //        Bradley Hand | Menlo

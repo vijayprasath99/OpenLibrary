@@ -105,13 +105,6 @@ class WorkDetailsVC: UIViewController {
         }
         return str
     }
-    
-    func bringUpBrowser(forUrl url: String){
-        if let vc = storyboard?.instantiateViewController(withIdentifier: BOOKBROWSERVC_STORYBOARDID) as? BookBrowserVC {
-            vc.url = url
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
 }
 
 extension WorkDetailsVC : UITableViewDelegate{
@@ -130,10 +123,19 @@ extension WorkDetailsVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: WORKDETAILEDVC_TABLEVIEW_CELL_REUSE_IDENTIFIER) as? WVCBookCell {
             let temp = editionTableDataSource[indexPath.row]
-            cell.configureCell(withBook: temp, instantiatingViewController: self)
+            cell.configureCell(withBook: temp, deligateForPassingControl: self)
             return cell
         }
         return UITableViewCell()
         
+    }
+}
+
+extension WorkDetailsVC : ControlTransferDeligate {
+    func bringUpBrowser(forUrl url: String){
+        if let vc = storyboard?.instantiateViewController(withIdentifier: BOOKBROWSERVC_STORYBOARDID) as? BookBrowserVC {
+            vc.url = url
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
