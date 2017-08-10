@@ -102,7 +102,7 @@ extension SearchVC : UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: SEARCHVC_REUSE_IDENTIFIER) as?  BookTVCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: SEARCHVC_REUSE_IDENTIFIER) as?  SVCBookCell{
             cell.configureCell(with: worksArray[indexPath.row])
             return cell
         }
