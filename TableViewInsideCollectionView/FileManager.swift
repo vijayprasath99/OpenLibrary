@@ -19,9 +19,8 @@ class FileManager {
                 returnObject = allSubjects.components(separatedBy: "\n")
             }
         } else {
-            
+            returnObject = ["art","science","success","biographies","biographies","religion", "romance","textbooks"]
         }
-        returnObject = ["art","science","success","biographies","biographies","religion", "romance","textbooks"]
         return returnObject
     }
 }

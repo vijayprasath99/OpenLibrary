@@ -26,7 +26,8 @@ fileprivate let OPENAPI_PREFIX : String = "http://covers.openlibrary.org"
 enum OpenAPI {
     case imageUrl(forID : String)
     case imageUrlWithOutDefaultImage(forID : String)
-    case searchUrl(forSearch : String)
+    case searchUrl(forSubject : String)
+    case searchUrlForSearchKey(key : String)
     case bookUrl(forID : String)
     
     var formattedURL : String {
@@ -37,11 +38,14 @@ enum OpenAPI {
         case let .imageUrlWithOutDefaultImage(forID):
             return "\(OPENAPI_PREFIX)/b/\(forID).jpg?default=false"
             
-        case let .searchUrl(forSearch):
-            return "https://openlibrary.org/subjects/\(forSearch.lowercased()).json"
+        case let .searchUrl(forSubject):
+            return "https://openlibrary.org/subjects/\(forSubject.lowercased()).json"
             
         case let .bookUrl(forID):
             return "http://openlibrary.org/api/volumes/brief/\(forID).json"
+            
+        case let .searchUrlForSearchKey(key):
+            return "https://openlibrary.org/search.json?q=\(key)&has_fulltext=true"
         }
     }
 }

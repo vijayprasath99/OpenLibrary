@@ -32,7 +32,7 @@ class MainVC: UIViewController{
         tableView.dataSource = self
         tableView.delegate = self
         
-        downloadModelData {
+        downloadModelData {  
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -54,8 +54,8 @@ class MainVC: UIViewController{
     private func downloadModelData(completionHandler : @escaping ()->()){
         
         for subject in subjects {
-            let url = OpenAPI.searchUrl(forSearch: subject).formattedURL
-            Network.sharedInstance.downloadJSON2(from: url, completion: { (downloadedData) in
+            let url = OpenAPI.searchUrl(forSubject: subject).formattedURL
+            Network.sharedInstance.downloadJSON2(from: url, completion: { [unowned self] (downloadedData) in
                 let workObject = Parser.sharedInstance.worksArray(fromJsonSubjectData: downloadedData)
                 self.model.append(workObject)
                 completionHandler()

@@ -184,7 +184,7 @@ class Work {
         self._numberOfEbooks = doc["ebook_count_i"] as? Int
         self._numberOfEditions = doc["edition_count"] as? Int
         self._lendingEdition = doc["lending_edition"] as? String
-        self._goodReadID = doc["d_goodreads"] as? [String]
+        self._goodReadID = doc["id_goodreads"] as? [String]
         self._libraryThingID = doc["id_librarything"] as? [String]
         self._isbn = doc["isbn"] as? [String]
         self._languagesAvailable = doc["language"] as? [String]

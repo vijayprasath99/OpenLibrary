@@ -41,7 +41,7 @@ class SearchVC: UIViewController {
     //Perform a search with API and reload table data
     fileprivate func performSearch(with searchKey: String){
         let formattedSearchKey : String = stringTransformedForSearch(from: searchKey)
-        let jsonURL = "https://openlibrary.org/search.json?q=\(formattedSearchKey)&has_fulltext=true"
+        let jsonURL = OpenAPI.searchUrlForSearchKey(key: formattedSearchKey).formattedURL
         Network.sharedInstance.downloadJSON2(from: jsonURL, completion: { (json) in
             self.worksArray = Parser.sharedInstance.worksArray(fromJsonData: json)
             DispatchQueue.main.async {

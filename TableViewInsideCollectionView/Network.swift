@@ -40,7 +40,6 @@ class Network{
 //    }
 //    
     func downloadJSON2(from : String, completion : @escaping DownloadComplete){
-        
         guard let jsonURL = URL(string: from) else {
             print("Network.swift | downloadJSON2 | Err : Something wrong with parsing URL -> \(from)")
             return
@@ -61,6 +60,7 @@ class Network{
         }
         task.resume()
     }
+    
     
     func getImageFromWeb(_ urlString: String, closure: @escaping (UIImage?) -> ()) {
         guard let url = URL(string: urlString) else {

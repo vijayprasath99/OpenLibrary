@@ -30,11 +30,11 @@ class Parser {
             for work in works{
                 let workObject = Work(jsonArray: work)
                 worksArray.append(workObject)
-//                print(workObject.title, workObject.lendingEdition_Medium)
             }
         }
         return worksArray
     }
+
     
     func bookObject(fromJsonData data : Any) -> Book{
         if let json = data as? [String : Any] {
@@ -48,18 +48,17 @@ class Parser {
     func date(fromUnixTimeStamp date : String) -> String{
         let date = NSDate(timeIntervalSince1970: TimeInterval(date)!)
         let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = DateFormatter.Style.long //Set time style
+        dateFormatter.timeStyle = DateFormatter.Style.none //Set time style
         dateFormatter.dateStyle = DateFormatter.Style.long //Set date style
-        dateFormatter.timeZone = TimeZone.current
-        let localDate = dateFormatter.string(from: date as Date)
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        let localDate = dateFormatter.string(from: date as Date)  + " UTC"
         return localDate
     }
     
     func string<T>(fromArray array: [T]) -> String{
-        var str : String = ""
+        var str : String = "Unknown"
         if array.count == 1 {
             str = "\(array[0])"
-            return str
         } else if array.count > 1 {
             str = "\(array[0])"
             for i in 1..<array.count {

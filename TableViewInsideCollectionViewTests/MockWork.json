@@ -1,0 +1,106 @@
+{"author_key": [
+               "OL67633A"
+               ],
+"author_name": [
+                "Tracey West"
+                ],
+"cover_edition_key": "OL7510837M",
+"cover_i": 276370,
+"ebook_count_i": 1,
+"edition_count": 3,
+"edition_key": [
+                "OL7510361M",
+                "OL7510836M",
+                "OL7510837M"
+                ],
+"first_publish_year": 1999,
+"has_fulltext": true,
+"ia": [
+       "mewtwostrikesbac00west"
+       ],
+"ia_box_id": [
+              "IA118108"
+              ],
+"ia_collection_s": "printdisabled;browserlending;china;inlibrary;internetarchivebooks",
+"id_goodreads": [
+                 "1480256",
+                 "1011074",
+                 "454771"
+                 ],
+"id_librarything": [
+                    "1558733",
+                    "749602",
+                    "441844"
+                    ],
+"isbn": [
+         "0439137411",
+         "9780439137416",
+         "9780439199681",
+         "0439199689",
+         "9780439199698",
+         "0439199697"
+         ],
+"key": "/works/OL6085899W",
+"language": [
+             "eng"
+             ],
+"last_modified_i": 1406797657,
+"lending_edition_s": "OL7510361M",
+"lending_identifier_s": "mewtwostrikesbac00west",
+"printdisabled_s": "OL7510361M",
+"public_scan_b": false,
+"publish_date": [
+                 "November 1, 1999",
+                 "July 1, 2000"
+                 ],
+"publish_year": [
+                 1999,
+                 2000
+                 ],
+"publisher": [
+              "Scholastic"
+              ],
+"seed": [
+         "/books/OL7510361M",
+         "/books/OL7510836M",
+         "/books/OL7510837M",
+         "/works/OL6085899W",
+         "/subjects/pokémon_(fictitious_characters)",
+         "/subjects/juvenile_fiction",
+         "/authors/OL67633A"
+         ],
+"subject": [
+            "Pokémon (Fictitious characters)",
+            "Juvenile fiction",
+            "Accessible book",
+            "Protected DAISY"
+            ],
+"subtitle": "Pikachu's Rescue Adventure",
+"text": [
+         "OL7510361M",
+         "OL7510836M",
+         "OL7510837M",
+         "Pikachu's Rescue Adventure",
+         "Tracey West",
+         "mewtwostrikesbac00west",
+         "0439137411",
+         "9780439137416",
+         "9780439199681",
+         "0439199689",
+         "9780439199698",
+         "0439199697",
+         "OL67633A",
+         "Movie Tie-in Novelization Mewtwo Strikes Back (Pokemon)",
+         "Pikachu's Rescue Adventure (movie Tie-in) (Pokemon)",
+         "The Power Of One (2nd Movie Novelization) (Pokemon)",
+         "Pokemon",
+         "Pokémon (Fictitious characters)",
+         "Juvenile fiction",
+         "Accessible book",
+         "Protected DAISY",
+         "/works/OL6085899W",
+         "Scholastic"
+         ],
+"title": "Pokemon",
+"title_suggest": "Pokemon",
+"type": "work"}
